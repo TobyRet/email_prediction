@@ -1,0 +1,12 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/
+/log/*.log
+/tmp
+doc/
+.swp
+.DS_Store
+.rspec
+/public/system
