@@ -5,7 +5,10 @@ class Patterns
   end
 
   def frequency
-    [first_name_dot_last_name, first_initial_dot_last_name, first_name_dot_last_initial, first_initial_dot_last_initial].inspect
+    [first_name_dot_last_name,
+     first_initial_dot_last_name,
+     first_name_dot_last_initial,
+     first_initial_dot_last_initial].sort_by { |key, value| value }
   end
 
   def first_name_dot_last_name

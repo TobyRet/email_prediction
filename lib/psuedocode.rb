@@ -9,6 +9,6 @@
 
 # CLASSES
 # running the application
-# Handling applicaiton logic
+# Handling application logic
 # looking up matching email addresses / returning best guesses
 # formatting target email address
