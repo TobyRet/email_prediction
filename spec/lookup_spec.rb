@@ -1,14 +1,12 @@
 require 'spec_helper'
+require_relative './helpers/targets.rb'
 require 'lookup'
 require 'target'
 
+
 describe 'Lookup' do
 
-  let(:peter) { build(:peter) }
-  let(:craig) { build(:craig) }
-  let(:steve) { build(:steve) }
-  let(:barack) { build(:barack) }
-  let(:fake) { build(:fakebob) }
+  build_targets
 
   it 'returns existing email addresses with matching domain name' do
 
@@ -26,7 +24,7 @@ describe 'Lookup' do
 
   end
 
-  it 'returns nil if no matching email address found' do
+  it 'returns empty hash if no matching email address found for target' do
 
     lookup = Lookup.new(fake)
     expect(lookup.search.empty?).to eq(true)
