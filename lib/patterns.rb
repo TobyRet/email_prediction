@@ -5,6 +5,7 @@ class Patterns
   end
 
   def frequency
+    [first_name_dot_last_name, first_initial_dot_last_name, first_name_dot_last_initial, first_initial_dot_last_initial].inspect
   end
 
   def first_name_dot_last_name
@@ -30,7 +31,6 @@ class Patterns
     result[:first_initial_dot_last_initial] = remove_domain.select { |email| email if email.length == 3 }.length
     result
   end
-
 
   def remove_domain
     @emails.map { |k, v| @emails[k].split('@').first }
