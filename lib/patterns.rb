@@ -5,14 +5,14 @@ class Patterns
   end
 
   def first_name_dot_last_name(emails)
-    formatted_emails = remove_domain(emails)
-    { first_name_dot_last_name: formatted_emails.map { |email| email if email.split('.').first.length != 1 }.length }
+    result = Hash.new
+    result[:first_name_dot_last_name] = remove_domain(emails).select { |email| email if email.split('.').first.length != 1 }.length
+    result
   end
 
   def first_initial_dot_last_name(emails)
     formatted_emails = remove_domain(emails)
-    puts formatted_emails
-    { first_initial_dot_last_name: formatted_emails.map { |email| email if email.split('.').last.length == 1 }.length }
+    { first_initial_dot_last_name: formatted_emails.map { |email| email if email.split('.').first.length == 1 }.length }
   end
 
   def remove_domain(emails)
