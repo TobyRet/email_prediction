@@ -22,4 +22,10 @@ FactoryGirl.define do
     domain "whitehouse.gov"
     initialize_with { new(name, domain) }
   end
+
+  factory :fakebob, class: Target do
+    name "Fake Bob"
+    domain "fake.com"
+    initialize_with { new(name, domain) }
+  end
 end

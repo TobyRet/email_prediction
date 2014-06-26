@@ -8,6 +8,7 @@ describe 'Lookup' do
   let(:craig) { build(:craig) }
   let(:steve) { build(:steve) }
   let(:barack) { build(:barack) }
+  let(:fake) { build(:fakebob) }
 
   it 'returns existing email addresses with matching domain name' do
 
@@ -25,9 +26,10 @@ describe 'Lookup' do
 
   end
 
-  xit 'returns nil if no matching email address found' do
+  it 'returns nil if no matching email address found' do
 
-    expect(lookup.search).to eq(nil)
+    lookup = Lookup.new(fake)
+    expect(lookup.search.empty?).to eq(true)
 
   end
 
