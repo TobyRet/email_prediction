@@ -46,4 +46,38 @@ describe 'Lookup' do
       expect(lookup.retrieve_pattern).to eq([:first_initial_dot_last_name, :first_name_dot_last_initial])
     end
   end
+
+  context 'format email' do
+
+    it "creates an email address with format: first_name_dot_last_name" do
+
+      lookup = Lookup.new(peter)
+      expect(lookup.format_email).to eq("Peter.Wong@alphasights.com")
+
+    end
+
+    it "creates an email address with format: first_initial_dot_last_name" do
+
+      lookup = Lookup.new(craig)
+      expect(lookup.format_email).to include("C.Silverstein@google.com")
+
+    end
+
+    it "creates an email address with format: first_name_dot_last_initial" do
+
+      lookup = Lookup.new(craig)
+      puts lookup.retrieve_pattern
+      expect(lookup.format_email).to include("Craig.S@google.com")
+
+    end
+
+    it "creates an email address with format: first_initial_dot_last_initial" do
+
+      lookup = Lookup.new(steve)
+      expect(lookup.format_email).to eq("S.W@apple.com")
+
+    end
+
+  end
+
 end

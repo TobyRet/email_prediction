@@ -19,4 +19,40 @@ class Lookup
     patterns.frequency
   end
 
+  def format_email
+
+    case
+    when retrieve_pattern.include?(:first_name_dot_last_name)
+      create_first_name_dot_last_name
+    when retrieve_pattern.include?(:first_initial_dot_last_name)
+      create_first_initial_dot_last_name
+    when retrieve_pattern.include?(:first_name_dot_last_initial)
+      create_first_name_dot_last_initial
+    when retrieve_pattern.include?(:first_initial_dot_last_initial)
+      create_first_initial_dot_last_initial
+    else
+      "Sorry, not enough data to make prediction"
+    end
+  end
+
+  def create_first_name_dot_last_name
+    split_name = @target.name.split
+    "#{split_name[0]}.#{split_name[1]}@#{@target.domain}"
+  end
+
+  def create_first_initial_dot_last_name
+    split_name = @target.name.split
+    "#{split_name[0][0]}.#{split_name[1]}@#{@target.domain}"
+  end
+
+  def create_first_name_dot_last_initial
+    split_name = @target.name.split
+    "#{split_name[0]}.#{split_name[1][0]}@#{@target.domain}"
+  end
+
+  def create_first_initial_dot_last_initial
+    split_name = @target.name.split
+    "#{split_name[0][0]}.#{split_name[1][0]}@#{@target.domain}"
+  end
+
 end
