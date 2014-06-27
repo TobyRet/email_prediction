@@ -24,10 +24,10 @@ class Lookup
     case
     when retrieve_pattern.include?(:first_name_dot_last_name)
       create_first_name_dot_last_name
-    when retrieve_pattern.include?(:first_initial_dot_last_name)
-      create_first_initial_dot_last_name
-    when retrieve_pattern.include?(:first_name_dot_last_initial)
-      create_first_name_dot_last_initial
+      #when retrieve_pattern.include?(:first_initial_dot_last_name)
+      #  create_first_initial_dot_last_name
+    when retrieve_pattern.include?(:first_name_dot_last_initial) && retrieve_pattern.include?(:first_name_dot_last_initial)
+      [create_first_initial_dot_last_name, create_first_name_dot_last_initial]
     when retrieve_pattern.include?(:first_initial_dot_last_initial)
       create_first_initial_dot_last_initial
     else
