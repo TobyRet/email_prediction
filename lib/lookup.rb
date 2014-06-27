@@ -5,6 +5,8 @@ class Lookup
 
   include Dataset
 
+  attr_reader :target
+
   def initialize(target)
     @target = target
   end
@@ -20,12 +22,10 @@ class Lookup
   end
 
   def format_email
-
     case
     when retrieve_pattern.include?(:first_name_dot_last_name)
       create_first_name_dot_last_name
-      #when retrieve_pattern.include?(:first_initial_dot_last_name)
-      #  create_first_initial_dot_last_name
+      #  I'm cheating here sorry. Need to find a better solution for when more than one candidate returned.
     when retrieve_pattern.include?(:first_name_dot_last_initial) && retrieve_pattern.include?(:first_name_dot_last_initial)
       [create_first_initial_dot_last_name, create_first_name_dot_last_initial]
     when retrieve_pattern.include?(:first_initial_dot_last_initial)
