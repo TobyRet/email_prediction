@@ -14,6 +14,7 @@ puts "\n"
 
 emails.each do |person|
   check = Lookup.new(person)
-  puts "#{check.target.name}: #{check.format_email}"
+  puts "#{check.target.name}: #{check.check_records}"
 end
+
 puts "\n"

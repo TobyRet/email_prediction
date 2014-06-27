@@ -21,17 +21,24 @@ class Lookup
     patterns.frequency
   end
 
+  def check_records
+    if search.empty?
+      "Sorry I do not have enough historical data to make a prediction"
+    else
+      format_email
+    end
+  end
+
   def format_email
     case
     when retrieve_pattern.include?(:first_name_dot_last_name)
       create_first_name_dot_last_name
-      #  I'm cheating here sorry. Need to find a better solution for when more than one candidate returned.
-    when retrieve_pattern.include?(:first_name_dot_last_initial) && retrieve_pattern.include?(:first_name_dot_last_initial)
+    when retrieve_pattern.include?(:first_name_dot_last_initial) && retrieve_pattern.include?(:first_name_dot_last_initial) #  I'm cheating here sorry. Need to find a better solution for when more than one candidate returned.
       [create_first_initial_dot_last_name, create_first_name_dot_last_initial]
     when retrieve_pattern.include?(:first_initial_dot_last_initial)
       create_first_initial_dot_last_initial
     else
-      "Sorry, not enough data to make prediction"
+      "Sorry, an unknown error has occured."
     end
   end
 

@@ -53,17 +53,4 @@ describe 'Patterns' do
 
   end
 
-  xit "return an array counting all pattern types" do
-
-    lookup = Lookup.new(peter)
-    matching_emails = lookup.search
-    patterns = Patterns.new(matching_emails)
-
-    expect(patterns.frequency).to eq([{ first_name_dot_last_name: 3 },
-                                      { first_initial_dot_last_name: 0 },
-                                      { first_name_dot_last_initial: 0 },
-                                      { first_initial_dot_last_initial: 0 } ])
-
-  end
-
 end

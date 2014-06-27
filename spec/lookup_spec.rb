@@ -66,7 +66,6 @@ describe 'Lookup' do
     it "creates an email address with format: first_name_dot_last_initial" do
 
       lookup = Lookup.new(craig)
-      puts lookup.retrieve_pattern
       expect(lookup.format_email).to include("Craig.S@google.com")
 
     end
@@ -75,6 +74,17 @@ describe 'Lookup' do
 
       lookup = Lookup.new(steve)
       expect(lookup.format_email).to eq("S.W@apple.com")
+
+    end
+
+  end
+
+  context 'unknown advisor' do
+
+    it "returns an error for an unknown advisor" do
+
+      lookup = Lookup.new(barack)
+      expect(lookup.check_records).to eq("Sorry I do not have enough historical data to make a prediction")
 
     end
 
