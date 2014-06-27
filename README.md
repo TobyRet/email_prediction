@@ -12,3 +12,6 @@ When a new advisor's name and email domain are given, the application looks up h
 
 # Improvements / Bugs
 In its current state the the application can return more than one email format for an advisor if the historical data is inconclusive, however I coded it in such a way that this will only work for the use case supplied. I think this is because of a flaw in the design of my app (for which I apologise). I will try and remedy this over the coming days. Also, formatting needs to be fixed for this particular scenario when printing to the console.
+
+# Note
+The application includes a file called pseudocode.rb. This is there purely to demonstrate my thought process when designing the app.
