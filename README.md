@@ -1,4 +1,4 @@
-# Email Predictior
+# Email Predictor
 
 An application built in Ruby that predicts email addresses for a person based on historical data. 
 
