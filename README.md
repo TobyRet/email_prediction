@@ -1,5 +1,5 @@
 # Predicting Email Addresses
-An application built in the Ruby language that predicts email addresses for an advisor. 
+An application built in the <strong>Ruby</strong> language that predicts email addresses for an advisor. 
 
 ### How it works
 When a new advisor's name and email domain are given, the application looks up historical data to determine the likely format for the advisor's email address.
@@ -10,8 +10,11 @@ When a new advisor's name and email domain are given, the application looks up h
 2. Bundle install
 3. In the console type `irb -Ilib -rrun`
 
-# Improvements / Bugs
+### Improvements / Bugs
 In its current state the the application can return more than one email format for an advisor if the historical data is inconclusive, however I coded it in such a way that this will only work for the use case supplied. I think this is because of a flaw in the design of my app (for which I apologise). I will try and remedy this over the coming days. Also, formatting needs to be fixed for this particular scenario when printing to the console.
 
-# Note
+### Note
 The application includes a file called pseudocode.rb. This is there purely to demonstrate my thought process when designing the app.
+
+### About me
+[Check out my github CV!](http://www.github.com/tobyret/cv)
